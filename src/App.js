@@ -1,16 +1,15 @@
-import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Pagenotfound from "./pages/Pagenotfound";
-import Dashboard from "./pages/user/Dashboard";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import ItemListContainer from './components/ItemListContainer';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-       
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="*" element={<Pagenotfound />} />
+        <Route path="/" element={<><ItemListContainer title="Bienvenido a la Tienda" /><HomePage /></>} />
       </Routes>
     </>
   );
