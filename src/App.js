@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer';
+import './App.css';
 import Navbar from './components/Navbar';
+import ItemListContainer from './containers/ItemListContainer';
 import HomePage from './pages/HomePage';
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><ItemListContainer title="Bienvenido a la Tienda" /><HomePage /></>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ItemListContainer title="Productos" />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </>
   );
