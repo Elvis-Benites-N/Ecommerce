@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer';
 import HomePage from './pages/HomePage';
+import ItemDetailContainer from './containers/ItemDetailContainer';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ItemListContainer title="Productos" />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="/products/:id" element={<ItemDetailContainer />} />
+        <Route path="/products/categoria/:category" element={<ItemListContainer title="Productos" />} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </>
   );

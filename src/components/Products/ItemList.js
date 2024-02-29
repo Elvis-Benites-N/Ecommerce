@@ -1,18 +1,14 @@
 import React from 'react';
 import Item from '../../pages/Item';
+import '../../styles/products/products.css'
 
 const ItemList = ({ products }) => {
   return (
-    <div>
+    <div className='item-list'>
       {products.map(product => (
         <Item
           key={product.id}
-          nombre={product.nombre}
-          descripcion={product.descripcion}
-          categoria={product.categoria}
-          precio={product.precio}
-          stock={product.stock}
-          img={product.img}
+          {...product}
         />
       ))}
     </div>

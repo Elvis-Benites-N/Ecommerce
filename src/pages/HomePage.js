@@ -5,7 +5,7 @@ const HomePage = () => {
 
   return (
     <Layout title={"Las mejores ofertas"}>
-      <div className="container text-center" style={{ minHeight: "75vh" }}>
+      <div className="container text-center">
         <h1>HomePage</h1>
 
         <div>
@@ -22,7 +22,7 @@ const HomePage = () => {
             pariatur.in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur "
           </p>
-          <img src="/welcome.svg" alt="Bienvenidos" />
+          <img  src="/welcome.svg" alt="Bienvenidos" />
         </div>
       </div>
     </Layout>

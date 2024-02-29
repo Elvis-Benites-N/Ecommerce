@@ -24,17 +24,17 @@ const Navbar = () => {
             </NavLink>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link ">
+                <NavLink exact to="/" className="nav-link" activeClassName="active">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/products" className="nav-link ">
+                <NavLink to="/products" className="nav-link" activeClassName="active">
                   Products
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link ">
+                <NavLink to="/cart" className="nav-link">
                   <CartWidget />
                 </NavLink>
               </li>

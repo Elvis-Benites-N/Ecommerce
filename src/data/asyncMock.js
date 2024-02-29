@@ -24,16 +24,16 @@ const products = [
     precio: 2000,
     categoria: "Remeras",
     stock: 10,
-    descripcion: "Remera básica de algodón 100%",
+    descripcion: "Remera de algodón básica, ideal para usar en cualquier ocasión.",
     img: "https://acdn.mitiendanube.com/stores/001/070/999/products/g1-d4a73f8111d8f99b6216917779450416-1024-1024.png"
   },
   {
     id: 4,
     nombre: "Buzo Adidas",
-    precio: 5000, 
+    precio: 5000,
     categoria: "Buzos",
     stock: 8,
-    descripcion: "Buzo deportivo Adidas",
+    descripcion: "Buzo deportivo Adidas, diseñado para ofrecer estilo, funcionalidad y alta calidad.",
     img: "https://www.fritzsportsac.com/wp-content/uploads/2023/09/IC6750.png"
   },
   {
@@ -41,18 +41,18 @@ const products = [
     nombre: "Zapatillas Nike",
     precio: 8000,
     categoria: "Zapatillas",
-    stock: 5, 
-    descripcion: "Zapatillas deportivas Nike",
-    img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/bf5af5bb-ae08-48af-a022-b765d1e1bb33/revolution-7-zapatillas-de-running-asfalto-WjdXFH.png"
+    stock: 5,
+    descripcion: "Zapatillas deportivas Nike, perfectas para complementar tu estilo activo.",
+    img: "https://falabella.scene7.com/is/image/FalabellaPE/gsc_118481941_2118720_1?wid=800&hei=800&qlt=70"
   },
   {
     id: 6,
-    nombre: "Pijama Polar", 
+    nombre: "Pijama Polar",
     precio: 1500,
     categoria: "Pijamas",
     stock: 12,
-    descripcion: "Pijama caliente polar para invierno",
-    img: "https://hmperu.vtexassets.com/arquivos/ids/4152758/Pijama-en-polar---Beige-grisaceo-claro---H-M-PE.jpg?v=638371960509130000"  
+    descripcion: "Pijama polar para invierno, diseñada para proporcionar calidez y confort",
+    img: "https://img.offers-cdn.net/assets/uploads/offers/pe/11102882/pijama-polar-mujer-talla-l-celeste-normal.jpeg"
   }
 ];
 
