@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+# Archivos de entorno
+.env
+
 # testing
 /coverage
 

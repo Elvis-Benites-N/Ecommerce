@@ -27,7 +27,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button onClick={handleIncrement}><FiPlus /></button>
       </div>
       <button className="button-store" onClick={() => onAdd(count)}>
-        <p>Agregar al carrito</p>
+        <p className='cart-add'>Agregar al carrito</p>
         <FaCheck />
       </button>
     </div>

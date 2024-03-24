@@ -27,6 +27,7 @@ const Item = ({ id, nombre, descripcion, categoria, precio, stock, img }) => {
           <FaEye />
         </button>
       </div>
+   
     </div>
   );
 };

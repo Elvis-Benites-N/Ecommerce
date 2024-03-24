@@ -1,47 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import products from '../data/asyncMock';
+import { useParams } from 'react-router-dom';
+import { firestore } from '../config/firebaseConfig';
+import { doc, getDoc } from 'firebase/firestore';
 import ItemDetail from '../pages/itemDetails';
-import Layout  from '../components/Layout/Layout';
 import Loader from '../components/Loader/ScaleLoader';
+import Layout from '../components/Layout/Layout';
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null);
-  const [error, setError] = useState(false);
   const { id } = useParams();
-  const navigate = useNavigate();
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProduct = (productId) => {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          const foundProduct = products.find(product => product.id === parseInt(productId));
-          resolve(foundProduct);
-        }, 2000);
-      });
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      try {
+        const docRef = doc(firestore, "products", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setProduct({ id: docSnap.id, ...docSnap.data() });
+          setIsLoading(false);
+        } else {
+          console.log("No such document!");
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching product: ", error);
+        setIsLoading(false);
+      }
     };
 
-    const timer = setTimeout(() => {
-      setError(true); 
-    }, 2500);
-
-    fetchProduct(id).then(data => {
-      clearTimeout(timer); 
-      setProduct(data);
-    });
+    fetchProduct();
   }, [id]);
 
-  if (error) {
-    return <div>Error: No se pudo cargar el producto</div>;
-  }
-
-  if (!product) {
+  if (isLoading) {
     return <Loader />;
   }
 
-  return <Layout title={"Tu mejor compra"}>
-    <ItemDetail product={product} navigate={navigate} />;
-  </Layout>
+  if (!product) {
+    return <div>Error: El producto no se pudo cargar</div>;
+  }
+
+  return (
+    <Layout title={"Detalles del producto"}>
+      <ItemDetail product={product} />;
+    </Layout>
+  );
 };
 
 export default ItemDetailContainer;
