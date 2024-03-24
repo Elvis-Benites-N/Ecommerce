@@ -1,0 +1,175 @@
+.item-detail-container {
+    display: flex;
+    align-items: center;
+}
+
+.left-column {
+    display: flex;
+    flex: 1;
+    border-right: 1px solid rgba(0, 0, 0, 0.45);
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-column {
+    flex: 1;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px
+}
+
+.category {
+    position: relative;
+}
+
+.category p {
+    margin-bottom: 0;
+}
+
+.category-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.product-image {
+    width: 700px;
+    height: 700px;
+    border-radius: 48px;
+}
+
+.prices {
+    font-size: 40px;
+    text-shadow: 0px 0px 5px rgba(255, 202, 64, 0.75);
+    line-height: 40px;
+    font-weight: medium;
+    color: #FFCA40;
+}
+
+.price-container {
+    display: flex;
+    gap: 88px;
+    align-items: flex-end;
+}
+
+
+.price-right {
+    font-size: 20px;
+}
+
+.right-column .quantity-container {
+    display: flex;
+    align-items: center;
+}
+
+.right-column .quantity-container button {
+    cursor: pointer;
+}
+
+.right-column .quantity-container button:first-child {
+    margin-right: 8px;
+}
+
+.right-column .quantity-container button:last-child {
+    margin-left: 8px;
+}
+
+
+.button-store {
+    background-color: #FFCA40;
+    color: #000000;
+    border: 1px solid #FFCA40;
+    border-radius: 12px;
+    padding: 4px 20px 0 20px;
+    align-items: center;
+    display: flex;
+    gap: 12px;
+}
+
+.button-store p {
+    padding: 14px 18px 0 18px
+}
+
+.cart-add {
+    padding-top:18px !important;
+}
+
+.button-back {
+    background-color: white;
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    ;
+    border-radius: 12px;
+    padding: 0px 20px;
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.button-back p {
+    padding: 18px 18px 0 18px
+}
+
+
+.quatity-container {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.quatity-container p {
+    padding-top: 4px;
+}
+
+
+.quantity-buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+
+
+.quantity-buttons p {
+    padding-top: 4px;
+}
+
+.quantity-buttons button {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.04);
+    ;
+    cursor: pointer;
+    padding: 0;
+    padding: 4px;
+}
+
+.quantity-buttons button:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.quantity-buttons button:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.container-buttons {
+    display: flex;
+    gap: 24px
+}
+
+.keep-button{
+        background-color: rgb(0, 0, 0);
+        color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.45);
+        padding: 28px 20px 20px 20px;
+        align-items: center;
+        display: flex;
+        gap: 12px;
+}

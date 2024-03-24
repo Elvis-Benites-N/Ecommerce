@@ -1,9 +1,8 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { FaShoppingCart } from 'react-icons/fa'; // Importar el ícono del carrito de compras
-import toast from "react-hot-toast";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import CartWidget from './CartWidget';
 
-const Header = () => {
+const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -20,18 +19,23 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
+            <NavLink to="/" className="navbar-brand">
               <img src="/logo.svg" alt="Logo" />
-            </Link>
+            </NavLink>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link ">
+              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link ">
-                  <FaShoppingCart /> {/* Aquí se agrega el ícono de carrito de compras */}
+              <NavLink to="/products" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                  Products
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/cart" className="nav-link">
+                  <CartWidget />
                 </NavLink>
               </li>
             </ul>
@@ -42,4 +46,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
