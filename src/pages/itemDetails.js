@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
-import { FiArrowLeft, FiMinus, FiPlus } from 'react-icons/fi';
-import '../styles/products/productsDetails.css';
+import React from 'react';
+import { FiArrowLeft } from 'react-icons/fi';
+import ItemCount from '../components/Counter/itemCount';
 
 const ItemDetail = ({ product, navigate }) => {
   const precioAntes = product.precio + 100;
-  const [cantidad, setCantidad] = useState(1);
-  const aumentarCantidad = () => {
-    setCantidad(cantidad + 1);
+  const onAdd = (quantity) => {
+    console.log(`Has agregado ${quantity} unidad(es) de ${product.nombre} al carrito.`);
   };
-  const disminuirCantidad = () => {
-    if (cantidad > 1) {
-      setCantidad(cantidad - 1);
-    }
-  };
+
   return (
     <div className="item-detail-container">
       <div className="left-column">
@@ -25,32 +19,22 @@ const ItemDetail = ({ product, navigate }) => {
           <div className="category-border"></div>
         </div>
         <h3 className='prices'>{product.nombre}</h3>
-        <h4 className='color-secondary'> PRECIO WEB</h4>
+        <h4 className='color-secondary'>PRECIO WEB</h4>
         <div className="price-container">
           <p className='price'>S/. {product.precio}</p>
-          <p className='price-right color-secondary'><span style={{ textDecoration: 'line-through' }}>ANTES S/. {precioAntes}</span></p>
+          <p className='price-right color-secondary'>
+            <span style={{ textDecoration: 'line-through' }}>ANTES S/. {precioAntes}</span>
+          </p>
         </div>
         <p className='color-secondary'>INVERSIONES BENITES' S.A.C. RUC: N°215898765465</p>
-        <div className='quatity-container'>
-          <p>CANTIDAD:</p>
-          <div className="quantity-buttons">
-            <button onClick={disminuirCantidad}><FiMinus /></button>
-            <p>{cantidad}</p>
-            <button onClick={aumentarCantidad}><FiPlus /></button>
-          </div>
-        </div>
+        <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
         <p className='color-secondary'>{product.descripcion}</p>
         <p>Solo queda {product.stock} en stock</p>
         <div className='container-buttons'>
-
-        <button className="button-back" onClick={() => navigate('/products')}>  <FiArrowLeft />
-          <p>Volver</p>
-        </button>
-        <button className="button-store" onClick={() => navigate('/store')}>  
-        <p>Agregar al carrito</p>
-        <FaCheck/>
-          
-        </button>
+          <button className="button-back" onClick={() => navigate('/products')}>
+            <FiArrowLeft />
+            <p>Volver</p>
+          </button>
         </div>
       </div>
     </div>

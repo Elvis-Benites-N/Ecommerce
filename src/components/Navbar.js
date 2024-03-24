@@ -24,12 +24,12 @@ const Navbar = () => {
             </NavLink>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink exact to="/" className="nav-link" activeClassName="active">
+              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/products" className="nav-link" activeClassName="active">
+              <NavLink to="/products" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                   Products
                 </NavLink>
               </li>

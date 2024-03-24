@@ -86,9 +86,8 @@
     color: #000000;
     border: 1px solid #FFCA40;
     border-radius: 12px;
-    padding: 0px 20px;
+    padding: 8px 20px 0 20px;
     align-items: center;
-    margin-top: 20px;
     display: flex;
     gap: 12px;
 }
@@ -114,10 +113,10 @@
 }
 
 
-
 .quatity-container {
     display: flex;
-    gap: 24px
+    gap: 24px;
+    align-items: center;
 }
 
 .quatity-container p {
